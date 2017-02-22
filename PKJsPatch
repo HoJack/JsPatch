@@ -1,0 +1,115 @@
+
+
+defineClass("TodayViewController", {
+            tableView_cellForRowAtIndexPath: function(tableView, indexPath) {
+            var identity = require('NSString').stringWithFormat("indexPath row:%ld", indexPath.row());
+            var cell = tableView.dequeueReusableCellWithIdentifier(identity);
+            if (!cell) {
+            cell = require('UITableViewCell').alloc().initWithStyle_reuseIdentifier(0, identity);
+            if (indexPath.row() == 0) {
+            cell.textLabel().setText("sizeclass");
+            }
+            else if (indexPath.row() == 1) {
+            cell.textLabel().setText("autoLayout");
+            }
+            else if (indexPath.row() == 2) {
+            cell.textLabel().setText("addProjectUpdateSB");
+            }
+            else if (indexPath.row() == 3) {
+            cell.textLabel().setText("Search");
+            }
+            else if (indexPath.row() == 4) {
+            cell.textLabel().setText("KB");
+            }
+            else if (indexPath.row() == 5) {
+            cell.textLabel().setText("group");
+            }
+            else if (indexPath.row() == 6) {
+            cell.textLabel().setText("present");
+            }
+            else if (indexPath.row() == 7) {
+            cell.textLabel().setText("scroll");
+            }
+            else if (indexPath.row() == 8) {
+            cell.textLabel().setText("table");
+            }
+            else if (indexPath.row() == 9) {
+            cell.textLabel().setText("calculate");
+            }
+            else if (indexPath.row() == 10) {
+            cell.textLabel().setText("JsPatch");
+            }
+            }
+            return cell;
+            },
+            
+            tableView_didSelectRowAtIndexPath: function(tableView, indexPath) {
+            tableView.deselectRowAtIndexPath_animated(indexPath, YES);
+            if (indexPath.row() == 0) {
+            var demo = require('DemoViewController').alloc().init();
+            self.navigationController().pushViewController_animated(demo, YES);
+            }
+            else if (indexPath.row() == 1) {
+            var autoV = require('UIStoryboard').storyboardWithName_bundle("AutoViewController", null).instantiateViewControllerWithIdentifier("auto");
+            autoV.setHidesBottomBarWhenPushed(YES);
+            self.navigationController().pushViewController_animated(autoV, YES);
+            }
+            else if (indexPath.row() == 2) {
+            var mis = require('MISAddProjectUpdate').alloc().init();
+            mis.setHidesBottomBarWhenPushed(YES);
+            self.navigationController().pushViewController_animated(mis, YES);
+            }
+            else if (indexPath.row() == 3) {
+            var search = require('SearchBarViewController').alloc().init();
+            search.setHidesBottomBarWhenPushed(YES);
+            self.navigationController().pushViewController_animated(search, YES);
+            }
+            else if (indexPath.row() == 4) {
+            var kb = require('KeyboardViewController').alloc().init();
+            kb.setHidesBottomBarWhenPushed(YES);
+            self.navigationController().pushViewController_animated(kb, YES);
+            }
+            else if (indexPath.row() == 5) {
+            var group = require('GroupViewController').alloc().init();
+            group.setHidesBottomBarWhenPushed(YES);
+            self.navigationController().pushViewController_animated(group, YES);
+            }
+            else if (indexPath.row() == 6) {
+            var present = require('PresentViewController').alloc().init();
+            present.setHidesBottomBarWhenPushed(YES);
+            self.navigationController().pushViewController_animated(present, YES);
+            }
+            else if (indexPath.row() == 7) {
+            var scroll = require('ScrollViewController').alloc().init();
+            scroll.setHidesBottomBarWhenPushed(YES);
+            self.navigationController().pushViewController_animated(scroll, YES);
+            }
+            else if (indexPath.row() == 8) {}
+            else if (indexPath.row() == 9) {
+            var scroll = require('CalculateViewController').alloc().init();
+            scroll.setHidesBottomBarWhenPushed(YES);
+            self.navigationController().pushViewController_animated(scroll, YES);
+            }
+            else if (indexPath.row() == 10) {
+            var patch = require('JsPatchViewController').alloc().init();
+            patch.setHidesBottomBarWhenPushed(YES);
+            self.navigationController().pushViewController_animated(patch, YES);
+            }
+            },
+            
+            }, {});
+
+defineClass("JsPatchViewController", {
+            
+            viewDidLoad: function() {
+//            self.ORIGviewDidLoad();
+            self.super().viewDidLoad();
+            self.view().setBackgroundColor(require('UIColor').redColor());
+            self.setTitle("nil");
+            },
+            
+            }, {});
+
+
+
+
